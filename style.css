@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: black;
+
+    color: white;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.container{
+    display: grid;
+
+    grid-template-columns: 260px 1fr 380px;
+
+    height: 100vh;
+}
+
+
+/* ========================= */
+/* SIDEBAR IZQUIERDA */
+/* ========================= */
+
+.sidebar-left{
+
+    border-right: 1px solid #2f3336;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.logo{
+    font-size: 40px;
+
+    font-weight: bold;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.menu-item{
+    font-size: 22px;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: 0.2s;
+}
+
+.menu-item:hover{
+    color: #1d9bf0;
+}
+
+.post-btn{
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 999px;
+
+    background-color: #1d9bf0;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.post-btn:hover{
+    background-color: #198cd8;
+}
+
+
+/* ========================= */
+/* FEED */
+/* ========================= */
+
+.feed{
+
+    border-right: 1px solid #2f3336;
+
+    overflow-y: auto;
+}
+
+#homeView,
+#statsView,
+#resultsView,
+#graphsView{
+
+    padding:20px;
+
+    min-height:100%;
+
+}
+
+#statsView,
+#resultsView,
+#graphsView{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.create-post{
+
+    padding: 20px;
+
+    border-bottom: 1px solid #2f3336;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.create-post input{
+
+    background-color: black;
+
+    border: 1px solid #2f3336;
+
+    border-radius: 999px;
+
+    padding: 14px;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+.create-post button{
+
+    align-self: flex-end;
+
+    padding: 10px 22px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background-color: #1d9bf0;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.post{
+
+    padding: 20px;
+
+    border-bottom: 1px solid #2f3336;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.post h3{
+    color: #71767b;
+}
+
+.post p{
+
+    font-size: 22px;
+
+    line-height: 1.4;
+}
+
+.stats{
+
+    display: flex;
+
+    gap: 25px;
+
+    color: #71767b;
+}
+
+
+/* ========================= */
+/* SIDEBAR DERECHA */
+/* ========================= */
+
+.sidebar-right{
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.config-card,
+.graph-card{
+
+    background-color: #16181c;
+
+    border-radius: 18px;
+
+    padding: 20px;
+}
+
+.config-card{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.config-card input{
+
+    background-color: black;
+
+    border: 1px solid #2f3336;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    color: white;
+}
+
+.method-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.method-select{
+
+    background:#0f1419;
+
+    border:1px solid #2f3336;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:0.2s;
+
+}
+
+.method-select:hover{
+
+    border-color:#1d9bf0;
+
+}
+
+.method-select:focus{
+
+    border-color:#1d9bf0;
+
+    box-shadow:0 0 0 2px rgba(29,155,240,0.25);
+
+}
+
+.method-select option{
+
+    background:#16181c;
+
+    color:white;
+
+}
+
+.graph-card canvas{
+
+    margin-top: 20px;
+}
+
+#graphsView canvas{
+
+    width:100% !important;
+
+    height:350px !important;
+
+    background:#16181c;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+}
+
+#resultsContent{
+
+    background:#16181c;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+}
+
+#downloadResultsBtn{
+
+    align-self:flex-start;
+
+    border:none;
+
+    background:#1d9bf0;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+#downloadResultsBtn:hover{
+
+    background:#198cd8;
+
+}
+
+#statsContent{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+#statsContent p{
+
+    background:#16181c;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    font-size:20px;
+
+}
+
+.extra-chart{
+
+    width:100%;
+
+}
+
+h2.extra-chart{
+
+    margin-top:20px;
+
+    color:#1d9bf0;
+
+    font-size:24px;
+
+}
+
+
+/* ========================= */
+/* SCROLL */
+/* ========================= */
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #2f3336;
+
+    border-radius: 999px;
+}

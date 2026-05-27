@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Fake News</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ========================= -->
+        <!-- SIDEBAR IZQUIERDA -->
+        <!-- ========================= -->
+
+        <aside class="sidebar-left">
+
+            <div class="logo">
+                FakeMaths
+            </div>
+
+            <nav class="menu">
+
+                <div
+                class="menu-item"
+                id="homeBtn"
+                >
+                    🏠 Inicio
+                </div>
+
+                <div
+                class="menu-item"
+                id="statsBtn"
+                >
+                    🔍 Estadísticas
+                </div>
+
+                <div
+                class="menu-item"
+                id="resultsBtn"
+                >
+                    🔔 Resultados
+                </div>
+                <div
+                class="menu-item"
+                id="graphsBtn"
+                >
+                    ✉️ Gráficas
+                </div>
+
+            </nav>
+
+            <button class="post-btn">
+                Publicar
+            </button>
+
+        </aside>
+
+
+        <!-- ========================= -->
+        <!-- FEED CENTRAL -->
+        <!-- ========================= -->
+
+        <main class="feed">
+
+            <div id="homeView">
+
+                <div class="create-post">
+
+                    <h2>¿Qué está pasando?</h2>
+
+                    <input 
+                        type="text" 
+                        id="fakeNewsInput"
+                        placeholder="Escribe una fake news..."
+                    >
+
+                    <button id="simulateBtn">
+                        Simular
+                    </button>
+
+                </div>
+
+                <div class="post">
+
+                    <h3>🔥 Tendencia</h3>
+
+                    <p id="fake-news-text">
+                        El profe me puso 0
+                    </p>
+
+                    <div class="stats">
+
+                        <span id="likes">
+                            ❤️ 0 me gusta
+                        </span>
+
+                        <span id="reposts">
+                            🔁 0 compartidos
+                        </span>
+
+                        <span id="comments">
+                            💬 0 comentarios
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div id="dynamic-posts"></div>
+
+            </div>
+
+
+            <div id="statsView" style="display:none;">
+
+                <h1>Estadísticas</h1>
+
+                <div id="statsContent"></div>
+
+            </div>
+
+
+            <div id="resultsView" style="display:none;">
+
+                <h1>Resultados</h1>
+                <!-- <button id="downloadResultsBtn">
+                    Descargar Resultados
+                </button> -->
+
+                <pre id="resultsContent"></pre>
+
+            </div>
+
+
+            <div id="graphsView" style="display:none;">
+
+                <h1>Gráficas</h1>
+
+                <canvas id="sirChart"></canvas>
+
+            </div>
+
+        </main>
+
+
+        <!-- ========================= -->
+        <!-- PANEL DERECHO -->
+        <!-- ========================= -->
+
+        <aside class="sidebar-right">
+            
+            <div style="display:none">
+
+            <p id="peakInfection"></p>
+
+            <p id="peakTime"></p>
+
+            <p id="methodUsed"></p>
+
+            <p id="totalRecovered"></p>
+
+            </div>
+
+            <div class="config-card">
+
+                <h2>Configuración de Simulación</h2>
+
+                <label>Beta</label>
+
+                <input 
+                    type="number" 
+                    id="betaInput"
+                    step="0.0001"
+                    value="0.0003"
+                >
+
+
+                <label>Gamma</label>
+
+                <input 
+                    type="number"
+                    id="gammaInput"
+                    step="0.01"
+                    value="0.1"
+                >
+
+                <label>S0</label>
+
+                    <input
+                    type="number"
+                    id="s0Input"
+                    value="990"
+                    >
+
+
+                    <label>I0</label>
+
+                    <input
+                    type="number"
+                    id="i0Input"
+                    value="10"
+                    >
+
+
+                    <label>R0</label>
+
+                    <input
+                    type="number"
+                    id="r0Input"
+                    value="0"
+                    >
+
+
+                    <label>h</label>
+
+                    <input
+                    type="number"
+                    id="hInput"
+
+                    step="0.01"
+
+                    value="0.1"
+                    >
+
+
+                    <label>Tiempo final</label>
+
+                    <input
+                    type="number"
+
+                    id="tfInput"
+
+                    value="50"
+                    >
+
+            </div>
+
+            <div class="method-container">
+
+                <label>
+                    Método
+                </label>
+
+                <select
+                id="methodSelect"
+                class="method-select"
+                >
+
+                    <option value="todos">
+
+                        Todos
+
+                    </option>
+
+                    <option value="euler">
+
+                        Euler
+
+                    </option>
+
+                    <option value="mejorado">
+
+                        Euler Mejorado
+
+                    </option>
+
+                    <option value="rk4">
+
+                        RK4
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+        </aside>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
