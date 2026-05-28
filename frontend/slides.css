@@ -1671,7 +1671,7 @@ margin:0;
 
 position:absolute;
 
-width:250px;
+width:300px;
 
 text-align:center;
 
@@ -1707,9 +1707,9 @@ margin:0;
 
 .orbit-1{
 
-top:-30px;
+top:50px;
 
-right:150px;
+right:-320px;
 
 left:auto;
 
@@ -1721,9 +1721,9 @@ animation-delay:.5s;
 
 .orbit-2{
 
-right:40px;
+right:-20px;
 
-top:230px;
+top:250px;
 
 animation-delay:1.1s;
 
@@ -1731,9 +1731,9 @@ animation-delay:1.1s;
 
 .orbit-3{
 
-left:40px;
+left:-10px;
 
-top:230px;
+top:320px;
 
 animation-delay:1.7s;
 

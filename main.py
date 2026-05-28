@@ -26,19 +26,19 @@ def dR_dt(I, gamma):
 def main():
 
     #Params
-    beta = 0.0003      # Tasa de propagación
-    gamma = 0.1     # Tasa de abandono
+    beta = 0.003      # Tasa de propagación
+    gamma = 0.1   # Tasa de abandono
 
     #Iniciales
-    S0 = 990        # Susceptibles inicial
-    I0 = 10         # Compartiendo inicial
+    S0 = 999        # Susceptibles inicial
+    I0 = 1         # Compartiendo inicial
     R0 = 0          # Recuperados inicial (Los q dejan de compartir)
 
     # Tiempo d simulacion
     t0 = 0          # Tiempo inicial
-    tf = 100        # Tiempo final
+    tf = 60        # Tiempo final
 
-    h = 1         # Tamaño de paso
+    h = 0.1         # Tamaño de paso
 
     # Cantidad de pasos (n) para el tiempo de simulación
     n = int((tf - t0) / h)
