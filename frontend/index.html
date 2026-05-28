@@ -6,8 +6,18 @@
     <title>Simulador de Fake News</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slides.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    window.MathJax={
+    tex:{
+    inlineMath:[['$','$']],
+    displayMath:[['$$','$$']]
+    }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -51,6 +61,13 @@
                 id="graphsBtn"
                 >
                     ✉️ Gráficas
+                </div>
+
+                <div
+                class="menu-item"
+                id="slidesBtn"
+                >
+                    ❓ Saber más
                 </div>
 
             </nav>
@@ -143,8 +160,641 @@
                 <h1>Gráficas</h1>
 
                 <canvas id="sirChart"></canvas>
+</div>
 
-            </div>
+<div id="slidesView" style="display:none;">
+    <div class="slides-container">
+
+    <section class="slide hero-slide active">
+
+    <div class="particles">
+
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+    <h1>
+
+    FakeMaths
+
+    </h1>
+
+    <p>
+
+    Simulación Matemática de
+
+    Propagación de Fake News
+
+    </p>
+
+    <div class="hero-author">
+
+    Juan José Ramírez Zuluaga
+
+    </div>
+
+    <br>
+
+    <button class="hero-btn">
+
+    Explorar Proyecto
+
+    </button>
+
+    </div>
+
+    </section>
+
+        <section class="slide problem-slide">
+
+<h1>
+
+¿Cómo se propaga una Fake News?
+
+</h1>
+
+<div class="network">
+
+<div class="node n1"></div>
+<div class="node n2"></div>
+<div class="node n3"></div>
+<div class="node n4"></div>
+<div class="node n5"></div>
+<div class="node n6"></div>
+<div class="node n7"></div>
+
+</div>
+
+<h2 class="viral-text">
+
+🔥 VIRAL
+
+</h2>
+
+<p class="problem-text">
+
+La información también puede propagarse.
+
+¿Podemos modelarla matemáticamente?
+
+</p>
+
+</section>
+
+        <section class="slide sir-slide">
+
+<p class="equation-subtitle">
+
+Modelo matemático
+
+</p>
+
+<h1>
+
+¿Por qué usar SIR?
+
+</h1>
+
+<p class="sir-subtitle">
+
+Una propagación digital puede modelarse como una epidemia de información
+
+</p>
+
+<div class="sir-flow">
+
+<div class="sir-card s-card">
+
+<div class="sir-icon">
+👀
+</div>
+
+<h2>
+$S$
+</h2>
+
+<p>
+Usuarios susceptibles
+
+a ver la noticia
+</p>
+
+</div>
+
+<div class="sir-arrow">
+→
+</div>
+
+<div class="sir-card i-card">
+
+<div class="sir-icon">
+📢
+</div>
+
+<h2>
+$I$
+</h2>
+
+<p>
+Usuarios
+
+compartiendo
+</p>
+
+</div>
+
+<div class="sir-arrow">
+→
+</div>
+
+<div class="sir-card r-card">
+
+<div class="sir-icon">
+🛑
+</div>
+
+<h2>
+$R$
+</h2>
+
+<p>
+Dejan de
+
+compartir
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="slide equations-slide">
+
+<p class="equation-subtitle">
+
+MODELO MATEMÁTICO
+
+</p>
+
+<h1>
+
+Ecuaciones Diferenciales SIR
+
+</h1>
+
+<div class="sir-equation-flow">
+
+<div class="flow-card">
+
+<div class="flow-top">
+
+S
+
+<p>
+$$
+-\beta SI
+$$
+</p>
+
+→
+
+I
+
+</div>
+
+<p>
+Usuarios comienzan a compartir
+</p>
+
+</div>
+
+<div class="flow-card">
+
+<div class="flow-top">
+
+I
+
+<p>
+$$
+\gamma I
+$$
+</p>
+
+→
+
+R
+
+</div>
+
+<p>
+Usuarios dejan de compartir
+</p>
+
+</div>
+
+</div>
+
+<div class="equation-list">
+
+<div class="equation-item">
+
+$$
+\frac{dS}{dt}
+=
+-\beta SI
+$$
+
+</div>
+
+<div class="equation-item">
+
+$$
+\frac{dI}{dt}
+=
+\beta SI
+-
+\gamma I
+$$
+
+</div>
+
+<div class="equation-item">
+
+$$
+\frac{dR}{dt}
+=
+\gamma I
+$$
+
+</div>
+
+</div>
+
+
+<p>
+
+Todas las ecuaciones del modelo están expresadas mediante derivadas de primer orden respecto al tiempo.
+
+</p>
+
+
+</section>
+
+<section class="slide methods-slide">
+
+<p class="equation-subtitle">
+
+MODELO COMPUTACIONAL
+
+</p>
+
+<h1>
+
+¿Cómo resolvemos el sistema?
+
+</h1>
+
+<!-- <p class="methods-subtitle">
+
+Las ecuaciones diferenciales se aproximan numéricamente
+
+</p> -->
+
+<div class="methods-flow">
+
+<div class="method-card method-euler">
+
+<h2>Euler</h2>
+
+<p>
+Simple<br>
+Rápido<br>
+Menos preciso
+</p>
+
+</div>
+
+<div class="method-arrow">→</div>
+
+<div class="method-card method-mejorado">
+
+<h2>Euler Mejorado</h2>
+
+<p>
+Balance entre
+precisión y costo
+</p>
+
+</div>
+
+<div class="method-arrow">→</div>
+
+<div class="method-card method-rk4">
+
+<h2>RK4</h2>
+
+<p>
+Más preciso<br>
+$k_1,k_2,k_3,k_4$<br>
+Más costoso
+</p>
+
+</div>
+
+</div>
+
+<div class="precision-rank">
+
+<p>
+
+Un método numérico es la forma computacional de resolver un modelo matemático y obtener resultados aproximados.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="slide implementation-slide">
+
+<p class="equation-subtitle">
+
+IMPLEMENTACIÓN
+
+</p>
+
+<h1>
+
+¿Cómo funciona FakeMaths?
+
+</h1>
+
+<div class="implementation-flow">
+
+<div class="impl-card">
+
+<div class="impl-icon">🌐</div>
+
+<h3>Frontend</h3>
+
+<p>
+Interfaz web
+Entradas usuario
+Visualización
+</p>
+
+</div>
+
+<div class="impl-arrow">↓</div>
+
+<div class="impl-card">
+
+<div class="impl-icon">📐</div>
+
+<h3>Modelo SIR</h3>
+
+<p>
+Variables
+Parámetros
+Ecuaciones
+</p>
+
+</div>
+
+<div class="impl-arrow">↓</div>
+
+<div class="impl-card">
+
+<div class="impl-icon">⚙️</div>
+
+<h3>Solver Numérico</h3>
+
+<p>
+Euler.js
+Mejorado.js
+RK4.js
+solver.js
+</p>
+
+</div>
+
+<div class="impl-arrow">↓</div>
+
+<div class="impl-card">
+
+<div class="impl-icon">📊</div>
+
+<h3>Resultados</h3>
+
+<p>
+Gráficas
+Comparaciones
+Errores
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="slide results-slide">
+
+<p class="equation-subtitle">
+
+RESULTADOS Y SIMULACIÓN
+
+</p>
+
+<h1>
+
+Comparación de Métodos
+
+</h1>
+
+<div class="results-preview">
+
+<div class="results-graph-placeholder">
+
+<div class="graph-icon">📈</div>
+
+<h3>
+
+Curvas SIR Comparadas
+
+</h3>
+
+<p>
+$S(t)$ · $I(t)$ · $R(t)$
+</p>
+
+</div>
+
+<div class="results-metrics">
+
+<div class="metric-card">
+
+<h3>Error</h3>
+
+<p>
+Comparación porcentual
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h3>Pico Infección</h3>
+
+<p>
+Máximo valor de $I(t)$
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h3>Tiempo Pico</h3>
+
+<p>
+Momento crítico $t_{peak}$
+</p>
+
+</div>
+
+</div>
+
+<button class="results-conclusion" id="goResultsBtn">
+
+Ver más resultados
+
+</button>
+
+</div>
+
+</section>
+
+<section class="slide conclusions-slide">
+
+<p class="equation-subtitle">
+
+CONCLUSIONES Y APRENDIZAJES
+
+</p>
+
+<h1>
+
+¿Qué aprendimos?
+
+</h1>
+
+<div class="orbit-container">
+
+<div class="orbit-center">
+
+<div class="center-dot"></div>
+
+<h2>
+
+FakeMaths
+
+</h2>
+
+<p>
+Visualización y análisis de propagación digital
+</p>
+
+</div>
+
+<div class="orbit-item orbit-1">
+
+<div class="orbit-icon">🧠</div>
+
+<p>
+Modelar fenómenos matemáticamente es posible
+</p>
+
+</div>
+
+<div class="orbit-item orbit-2">
+
+<div class="orbit-icon">⚙️</div>
+
+<p>
+Los métodos numéricos permiten resolver modelos complejos
+</p>
+
+</div>
+
+<div class="orbit-item orbit-3">
+
+<div class="orbit-icon">📈</div>
+
+<p>
+La precisión depende del método y del paso $h$
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="slide demo-slide">
+
+<p class="equation-subtitle">
+
+DEMO INTERACTIVA
+
+</p>
+
+<h1>
+
+Explora FakeMaths
+
+</h1>
+
+<p class="demo-text">
+
+Los resultados completos, comparaciones y simulaciones pueden explorarse directamente desde el simulador.
+
+</p>
+
+<div class="demo-pulse"></div>
+
+<button class="demo-btn">
+
+Abrir Simulador
+
+</button>
+
+</section>
+
+    </div>
+
+    <div class="slide-controls">
+
+        <button id="prevSlide">
+            ←
+        </button>
+
+        <button id="nextSlide">
+            →
+        </button>
+
+    </div>
+
+</div>
+
 
         </main>
 
@@ -171,7 +821,7 @@
 
                 <h2>Configuración de Simulación</h2>
 
-                <label>Beta</label>
+                <label>$\beta$</label>
 
                 <input 
                     type="number" 
@@ -181,7 +831,7 @@
                 >
 
 
-                <label>Gamma</label>
+                <label>$\gamma$</label>
 
                 <input 
                     type="number"
@@ -190,7 +840,7 @@
                     value="0.1"
                 >
 
-                <label>S0</label>
+                <label>$S_0$</label>
 
                     <input
                     type="number"
@@ -199,7 +849,7 @@
                     >
 
 
-                    <label>I0</label>
+                    <label>$I_0$</label>
 
                     <input
                     type="number"
@@ -208,7 +858,7 @@
                     >
 
 
-                    <label>R0</label>
+                    <label>$R_0$</label>
 
                     <input
                     type="number"
@@ -217,7 +867,7 @@
                     >
 
 
-                    <label>h</label>
+                    <label>$h$</label>
 
                     <input
                     type="number"
@@ -287,6 +937,7 @@
     </div>
 
     <script type="module" src="app.js"></script>
+    <script type="module" src="slides.js"></script>
 
 </body>
 </html>

@@ -875,13 +875,35 @@ Peak Time: ${result.t[peakIndex].toFixed(1)}
 homeBtn.addEventListener(
 "click",
 ()=>{
+slidesView.style.display="none";
 changeView(homeView)
 }
+);
+
+const slidesBtn=
+document.getElementById(
+"slidesBtn"
+);
+
+const slidesView=
+document.getElementById(
+"slidesView"
+);
+
+const goResultsBtn=
+document.getElementById(
+"goResultsBtn"
+);
+
+const heroBtn=
+document.querySelector(
+".hero-btn"
 );
 
 statsBtn.addEventListener(
 "click",
 ()=>{
+slidesView.style.display="none";
 changeView(statsView)
 }
 );
@@ -889,9 +911,9 @@ changeView(statsView)
 resultsBtn.addEventListener(
 "click",
 ()=>{
+slidesView.style.display="none";
 resultsContent.textContent=
 finalResults;
-
 changeView(resultsView)
 }
 );
@@ -899,6 +921,51 @@ changeView(resultsView)
 graphsBtn.addEventListener(
 "click",
 ()=>{
+slidesView.style.display="none";
 changeView(graphsView)
+}
+);
+
+slidesBtn.addEventListener(
+"click",
+()=>{
+
+homeView.style.display="none";
+statsView.style.display="none";
+resultsView.style.display="none";
+graphsView.style.display="none";
+
+slidesView.style.display="block";
+
+}
+);
+
+document.addEventListener(
+"click",
+(e)=>{
+
+if(
+ e.target.closest("#goResultsBtn")
+){
+
+slidesView.style.display="none";
+
+resultsContent.textContent=
+finalResults;
+
+changeView(resultsView);
+
+}
+
+if(
+ e.target.closest(".hero-btn")
+){
+
+slidesView.style.display="none";
+
+changeView(homeView);
+
+}
+
 }
 );
