@@ -241,9 +241,8 @@ La construcción del proyecto incluyó apoyo de herramientas de Inteligencia Art
 - Investigación conceptual y técnica
 - Explicaciones matemáticas
 - Validación de ideas
-- Arquitectura general
 - Resolución de dudas técnicas
-- Construcción del frontend demostrativo
+- Construcción del frontend duplicado (Pasar modelo y metodos de python creados por mi a js)
 - Apoyo durante etapas de debugging y corrección
 
 El desarrollo, adaptación, validación matemática, pruebas, correcciones y toma de decisiones finales fueron realizadas manualmente.
